@@ -111,25 +111,30 @@ function botonDefensa(martin, rival) {
 
 
 function __main__() {
-    var botonCursiva = document.getElementById("cursiva");
-    if (botonCursiva.checked == false) {
-        botonCursiva.addEventListener("click", (event) => {
-            estiloTexto(event);
-            botonCursiva.checked == true
-        })
-        botonCursiva.removeEventListener("click", (event) => {
-            estiloTexto(event);
-        }) 
-    }
-
-    var botonCursiva = document.getElementById("cursiva");
-    console.log(botonCursiva.checked)
-    if(botonCursiva.checked == true){
-
-        botonCursiva.addEventListener("click", () => {
-            estiloLimpiar();
+    var cuerpo = document.getElementById("cuerpo");
+    
+    //Estilo Texto
+    var checkboxEstilo = document.getElementsByClassName("estiloTexto");
+    for (i = 0; i < checkboxEstilo.length; i++) {
+        checkboxEstilo[i].addEventListener("change", () => {
+            estiloTexto()
         })
     }
+    
+    if (localStorage.getItem("negrita") == "bold") {
+        cuerpo.style.fontWeight = localStorage.getItem("negrita");
+        checkboxEstilo[0].checked = true;
+    }
+    
+    if (localStorage.getItem("cursiva") == "italic") {
+        cuerpo.style.fontStyle = localStorage.getItem("cursiva");
+        checkboxEstilo[1].checked = true;
+    }
+
+    
+
+
+
 
 
     preload();

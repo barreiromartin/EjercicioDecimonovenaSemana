@@ -166,18 +166,3 @@ function limpiarTodo(){
 
 
 
-
-function estiloTexto(event) {
-    var cuerpo = document.getElementById("cuerpo");
-    cuerpo.style.fontStyle = event.currentTarget.value;
-    console.log(event.currentTarget.value);
-    localStorage.setItem("textoCursiva", event.currentTarget.value);
-}
-
-function estiloLimpiar() {
-    var cuerpo = document.getElementById("cuerpo");
-    cuerpo.style.fontStyle = "normal";
-    console.log("normal");
-    localStorage.setItem("textoCursiva", "normal");
-}
-    
